@@ -1,12 +1,6 @@
 # ReboundEffects
 回弹阻尼效果的简单实现,基于FrameLayout  
   
-  
-  ![](https://github.com/ausboyue/ReboundEffects/blob/master/demo.gif)  
-  
-  <p>
-	<span style="font-family:Arial,Helvetica,sans-serif; background-color:rgb(255,255,255)"><span style="white-space:pre"></span>好久没有写Android博客了，这段时间有点浮躁，静不下心来写。趁今天周五心情好点，写个简单点的技术实现。</span>
-</p>
 <p>
 	<span style="font-family:Arial,Helvetica,sans-serif; background-color:rgb(255,255,255)"><span style="white-space:pre"></span>先简单说说回弹阻尼效果的思路，先自定义一个ViewGroup ----- ReboundEffectsView，通过手势的上下滑动距离差不断改变其子View（一般都是子ViewGroup）的相对于该ReboundEffectsView的位置（坐标），当手势为释放（action_up）或取消（action_cancel）时，重置子View最初始相对ReboundEffectsView的位置，最初始的位置值应在处理滑动事件前保存下来以用来重置。</span>
 </p>
