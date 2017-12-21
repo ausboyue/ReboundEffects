@@ -1,8 +1,8 @@
 #ReboundEffects
-> 回弹阻尼效果的简单实现,基于FrameLayout
-先简单说说回弹阻尼效果的思路，先自定义一个ViewGroup ----- ReboundEffectsView，通过手势的上下滑动距离差不断改变其子View（一般都是子ViewGroup）的相对于该ReboundEffectsView的位置（坐标），当手势为释放（action_up）或取消（action_cancel）时，重置子View最初始相对ReboundEffectsView的位置，最初始的位置值应在处理滑动事件前保存下来以用来重置。
+>先简单说说回弹阻尼效果的思路，先自定义一个ViewGroup ----- ReboundEffectsView，通过手势的上下滑动距离差不断改变其子View（一般都是子ViewGroup）的相对于该ReboundEffectsView的位置（坐标），当手势为释放（action_up）或取消（action_cancel）时，重置子View最初始相对ReboundEffectsView的位置，最初始的位置值应在处理滑动事件前保存下来以用来重置。
 
 ![效果图](https://github.com/ausboyue/ReboundEffects/raw/master/demo.gif)
+
 Demo项目下载地址：https://github.com/ausboyue/ReboundEffects
 
 ###进入代码板块
