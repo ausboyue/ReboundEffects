@@ -4,13 +4,15 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
 
 /**
  * 回弹阻尼效果的简单实现,基于FrameLayout
  * 使用该ReboundEffectsView时应保证其只有且只有一个子View,唯一的独生子，我就叫它太子View
  * 
- * @author Cheny
+ * @author www.icheny.cn
+ * @date 2016-12-23
  *
  */
 public class ReboundEffectsView extends FrameLayout {
@@ -46,8 +48,6 @@ public class ReboundEffectsView extends FrameLayout {
 			case MotionEvent.ACTION_MOVE:
 				return onActionMove(e);
 			case MotionEvent.ACTION_UP:
-				onActionUp(e);
-				break;
 			case MotionEvent.ACTION_CANCEL:
 				onActionUp(e);// 当ACTION_UP一样处理
 				break;
@@ -73,7 +73,7 @@ public class ReboundEffectsView extends FrameLayout {
 	 */
 	private boolean onActionMove(MotionEvent e) {
 		float nowY = e.getY();
-		float diff = (nowY - mVariableY) / 3;
+		float diff = (nowY - mVariableY) / 2;
 		if (Math.abs(diff) > 0) {// 上下滑动
 			// 移动太子View的上下位置
 			mPrinceView.layout(mPrinceView.getLeft(), mPrinceView.getTop() + (int) diff, mPrinceView.getRight(),
@@ -100,6 +100,9 @@ public class ReboundEffectsView extends FrameLayout {
 	 * 回弹，重置太子View初始的位置
 	 */
 	private void resetPrinceView() {
+		TranslateAnimation ta = new TranslateAnimation(0, 0, mPrinceView.getTop() - mInitTop, 0);
+		ta.setDuration(600);
+		mPrinceView.startAnimation(ta);
 		mPrinceView.layout(mPrinceView.getLeft(), mInitTop, mPrinceView.getRight(), mInitBottom);
 	}
 
