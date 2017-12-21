@@ -5,7 +5,7 @@
 	<span style="font-family:Arial,Helvetica,sans-serif; background-color:rgb(255,255,255)"><span style="white-space:pre"></span>先简单说说回弹阻尼效果的思路，先自定义一个ViewGroup ----- ReboundEffectsView，通过手势的上下滑动距离差不断改变其子View（一般都是子ViewGroup）的相对于该ReboundEffectsView的位置（坐标），当手势为释放（action_up）或取消（action_cancel）时，重置子View最初始相对ReboundEffectsView的位置，最初始的位置值应在处理滑动事件前保存下来以用来重置。</span>
 </p>
 <p style="text-align:center">
-	<span style="font-family:Arial,Helvetica,sans-serif; background-color:rgb(255,255,255)"><img src="http://img.blog.csdn.net/20161224104642929?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYXVzYm95dWU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="效果图" align="middle" width="240" height="428" /><br />
+	<span style="font-family:Arial,Helvetica,sans-serif; background-color:rgb(255,255,255)"><img src="https://github.com/ausboyue/ReboundEffects/blob/master/demo.gif" alt="效果图" align="middle" width="240" height="428" /><br />
 	</span>
 </p>
 <p style="text-align:center">
