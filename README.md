@@ -88,6 +88,16 @@ Demo项目下载地址：https://github.com/ausboyue/ReboundEffects
 			isEndwiseSlide = false;
 		}
 	}
+	
+	/**
+	 * 回弹，重置太子View初始的位置
+	 */
+	private void resetPrinceView() {
+		TranslateAnimation ta = new TranslateAnimation(0, 0, mPrinceView.getTop() - mInitTop, 0);
+		ta.setDuration(600);
+		mPrinceView.startAnimation(ta);
+		mPrinceView.layout(mPrinceView.getLeft(), mInitTop, mPrinceView.getRight(), mInitBottom);
+	}
 ```
 ---
 OK，整个自定义View中重写原生的方法并不多，也不需要自行测量和绘制View，代码逻辑也足够精简，如果有什么bug或建议可以在下面评论，我会继续更新博客。
